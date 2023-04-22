@@ -3,7 +3,13 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	plugins: [sveltekit()],
+	  include: [
+		'tests/**/*.{test,spec}.{js,ts}',
+	  ],
 	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	  include: [
+		'tests/**/*.{test,spec}.{js,ts}',
+	  ],
+	  setupFiles: ['tests/setup.ts'],
+	},
 });
